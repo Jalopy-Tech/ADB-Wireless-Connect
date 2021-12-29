@@ -1,16 +1,16 @@
 # ADB Wireless Connect
 
-### Overview
+## Overview
 
 <img align="right" src="./images/ADB Wireless Connect.png" alt="ADB Wireless Connect" style="zoom:100%;" />ADB Wireless Connect is a GUI front-end to to connect or pair an Android device using adb.
 
  The Android device needs to connected the same network via WiFi. The connecting device needs to be connected using either WiFi or Ethernet.
 
-### Installation
+## Installation
 
 ADB Wireless Connect installation instructions are on the main <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/main/README.md">README</a> page.
 
-### ADB Tools
+## ADB Tools
 
 ADB Tools needs to be installed and the adb command needs to be in the PATH. More information can be found in the installation instructions. When the app is opened, the adb location is displayed.
 
@@ -30,13 +30,13 @@ adb pair
 
  If abd reports "Unknown command", it needs updating to the latest version (see the Installation section).
 
-### Paring
+## Paring
 
 An Android device first needs to be paired before it can be connected. In the app, when the pair action is selected, the "Pair Instructions" button will be available to display a quick set of instructions.
 
 The port used for pairing is only used for pairing and is not related the port used for connecting.
 
-### Connecting
+## Connecting
 
 In the app, when the connect action is selected, the "Connect Instructions" button will be available to display a quick set of instructions.
 
@@ -44,7 +44,7 @@ The port used for connecting is not related the port used for pairing.
 
 If the Android device is going to be regularly connected, the app can remember the IP address and port for subsequent connections.  Unfortunately Android uses a new port when the device is rebooted, so remembering the port may not be useful. However, the IP address can be made static, either by setting up the Android device with a static IP address, or using the router's function to assign the same IP address to the Android device every time by knowing its MAC address.
 
-### Command line options
+## Command line options
 
 The app can pass in options when it is called.
 
@@ -64,7 +64,7 @@ Options:
 
   -p, --pair-port <pairPort>        Specify the pair port.
 
-### License
+## License
 
 Copyright &copy; 2022 Robert J. Joynt.
 
