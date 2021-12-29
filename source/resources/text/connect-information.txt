@@ -1,0 +1,8 @@
+To connect to an Android device, do the following on the device:
+<ol>
+<li>Make sure <i>Developer Options</i> has been turned on.<br/><li/>
+<li>If the device has not been paired, do this before connecting.<br/><li/>
+<li>Go to <i>Settings</i> -> <i>Developer options</i> -> <i>Wireless debugging</i>.<br/><li/>
+<li>Turn on <i>Wireless debugging</i>.<br/><li/>
+<li>Use the <i>IP address</i> and <i>Port</i> displayed. These values might be separated by a colon (':').<br/><li/>
+</ol>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+	<Name>ADB Wireless Connect</Name>
+	<Version>1.0</Version>
+	<Title>ADB Wireless Connect Installer</Title>
+	<Publisher>Jalopy Software</Publisher>
+	<ProductUrl>https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/main/README.md</ProductUrl>
+	<TargetDir>@HomeDir@/adb-wireless-connect</TargetDir>
+	<RunProgram>@TargetDir@/adb-wireless-connect.sh</RunProgram>
+	<RunProgramDescription>Launch ADB Wireless Connect</RunProgramDescription>
+	<WizardDefaultWidth>800</WizardDefaultWidth>
+	<WizardStyle>Modern</WizardStyle>
+	<Logo>logo.png</Logo>
+	<Watermark>watermark.png</Watermark>
+	<ControlScript>controlscript.js</ControlScript>
+	<SupportsModify>false</SupportsModify>
+	<CreateLocalRepository>false</CreateLocalRepository>
+</Installer>

@@ -1,0 +1,3 @@
+/home/ubuntu/adb-wireless-connect/bin/adb-wireless-connect: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by /home/ubuntu/adb-wireless-connect/bin/adb-wireless-connect)
+
+ldd adb-wireless-connect | grep "=> /" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./temp

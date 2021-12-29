@@ -1,0 +1,13 @@
+{
+    "name": "ADB Wireless Connect",
+    "qifOut": "ADB-Wireless-Connect-Linux-Installer.run",
+    "bin": "../../builds/Linux/release/adb-wireless-connect/adb-wireless-connect",
+    "icon": "./icons/adb-wireless-connect.png",
+    "qif": "template",
+    "extraData": [
+            "./lib/libicudata.so.56",
+            "./lib/libicui18n.so.56",
+            "./lib/libicuuc.so.56"
+        ]
+
+}
