@@ -2,7 +2,7 @@
 
 ### Overview
 
-<img align="right" src="/mnt/Data/Projects/ADB Wireless Connect/images/ADB Wireless Connect.png" alt="ADB Wireless Connect" style="zoom:100%;" />ADB Wireless Connect is a GUI front-end to to connect or pair an Android device using adb.
+<img align="right" src="./images/ADB Wireless Connect.png" alt="ADB Wireless Connect" style="zoom:100%;" />ADB Wireless Connect is a GUI front-end to to connect or pair an Android device using adb.
 
  The Android device needs to connected the same network via WiFi. The connecting device needs to be connected using either WiFI or Ethernet.
 
