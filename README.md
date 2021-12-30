@@ -26,7 +26,7 @@ The app relies on ADB Tools being installed with the adb executable file in the 
 
 <img align="right" src="./images/Linux.png" alt="Linux"  />In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the executable file "ADB-Wireless-Connect-Linux-Installer.run" and run it in Linux. This installer will ask for the destination folder to be created. It defaults to a new folder ("adb-wireless-connect") in the home folder. The app can also be installed to a root folder such as "/opt/adb-wireless-connect" as desired (root password will be needed).. The app files will be installed and a shortcut will be added to the menu under "ADB Wireless Connect". The app can be run directly using the "adb-wireless-connect.sh" file in the installation folder.
 
-To uninstall, go to the installation folder and run the executable file "maintenancetool".
+To uninstall, go to the installation folder and run the executable file "adb-wireless-connect-maintenance-tool".
 
 ADB Tools needs to be installed and in the search PATH. ADB Tools may be available in your distribution's software manager.
 
@@ -46,9 +46,9 @@ Be aware that this may not be the lasted version of ADB Tools. This is especiall
 
 ###  Windows
 
-<img align="right"  src="./images/Windows.png" alt="Windows"  /> In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the executable file "ADB-Wireless-Connect-Windows-Installer.exe" and run it in Windows. This installer will install ADB Wireless Connect. It will add a shortcut to the Windows start menu under "ADB Wireless Connect" and add a shortcut to the desktop.
+<img align="right"  src="./images/Windows.png" alt="Windows"  /> In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the executable file "ADB-Wireless-Connect-Windows-Installer.exe" and run it in Windows. This installer will ask for the destination folder to be created. It defaults to a new folder "C:\Program Files\ADB Wireless Connect". The app can also be installed to a home folder. A shortcut in the Windows start menu under "ADB Wireless Connect" and a desktop shortcut will be created.
 
-To uninstall, go to the Control Panel, then Programs and uninstall ADB Wireless Connect. To uninstall manually, go to the installation folder and run the executable file "maintenancetool.exe".
+To uninstall, go to the Control Panel, then Programs and uninstall ADB Wireless Connect. To uninstall manually, go to the installation folder and run the executable file "ADBWirelessConnectMaintenanceTool.exe".
 
 To install ADB Tools in Windows, do the following:
 
@@ -63,9 +63,9 @@ To install ADB Tools in Windows, do the following:
 
 ### macOS
 
-<img align="right" src="./images/macOS.png" alt="macOS"  />In the latest  <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the ADB-Wireless-Connect-macOS-Image.dmg file and open it in macOS. The image will mount showing the "ADB Wireless Connect.app" application. This can be dragged into the Applications folder using Finder and will be available from the Launcher. Alternatively the app can be opened immediately to run the app.
+<img align="right" src="./images/macOS.png" alt="macOS"  />In the latest  <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the ADB-Wireless-Connect-macOS-Installer.dmg file and open it in macOS. The image will mount showing the "ADB-Wireless-Connect-macOS-Installer.app". Open this app to run the installer. This installer will ask for the destination folder to be created. It defaults to a new folder ("ADB Wireless Connect") in the user's "Application" folder. A shortcut in Launcher will be created. Note that the program doesn't launch from the installation (it should), but will launch normally from Launcher afterwards.
 
-To uninstall, use Finder to view the "ADB Wireless Connect.app" in the Applications folder. Delete this file.
+To uninstall, go to the installation folder using Finder. Run the "ADB Wireless Connect Maintenance Tool.app" app to uninstall.
 
 ADB Tools can be installed using  Homebrew. Open the Terminal app, and enter the following command:
 
