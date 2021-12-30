@@ -1,17 +1,35 @@
 #!/bin/bash
-echo "ADB Wireless Connect macOS Packager"
+echo "ADB Wireless Connect macOS Packager" 
 
 echo "Deleting old installer..."
-rm "./ADB-Wireless-Connect-macOS-Image.dmg"
+rm -R "./ADB-Wireless-Connect-macOS-Installer.dmg"
+rm -R "./ADB-Wireless-Connect-macOS-Installer.app"
+rm -R "./packages/com.adbwirelessconnect/data/ADB Wireless Connect.app" 
 
-echo "Creating new installer..."
-~/qt/6.2.2/macos/bin/macdeployqt "../../builds/macOS/release/adb-wireless-connect/ADB Wireless Connect.app" -dmg
+echo "Copying application for making deployable..." 
+rm -R "./packages/com.adbwirelessconnect/data/*"
+cp -R "../../builds/macOS/release/adb-wireless-connect/ADB Wireless Connect.app" "./packages/com.adbwirelessconnect/data"
 
-echo "Moving new installer..."
-mv "../../builds/macOS/release/adb-wireless-connect/ADB Wireless Connect.dmg" "./ADB-Wireless-Connect-macOS-Image.dmg"
+echo Creating macOS deployable app using macdeployqt...
+~/qt/6.2.2/macos/bin/macdeployqt "./packages/com.adbwirelessconnect/data/ADB Wireless Connect.app"
 
+
+echo "Creating installer..."
+~/Qt/Tools/QtInstallerFramework/4.2/bin/binarycreator --offline-only  -c config/config.xml -p packages ADB-Wireless-Connect-macOS-Installer
+
+echo "Creating disk image of installer using macdeployqt..."
+~/qt/6.2.2/macos/bin/macdeployqt "ADB-Wireless-Connect-macOS-Installer.app" -dmg
+rm -R "ADB-Wireless-Connect-macOS-Installer.app" 
+
+echo Deleting temporary packages...
+rm -R "./packages/com.adbwirelessconnect/data/ADB Wireless Connect.app"
 
 echo "Packaging finished."
-echo "The package is ADB-Wireless-Connect-macOS-Image.dmg"
 
+
+
+
+
+echo "The installer is ADB-Wireless-Connect-macOS-Installer"
 read -p "Press [Enter] key"
+

@@ -4,12 +4,14 @@
 	<Version>1.0</Version>
 	<Title>ADB Wireless Connect Installer</Title>
 	<Publisher>Jalopy Software</Publisher>
-	<ProductUrl>https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/main/README.md</ProductUrl>
-	<TargetDir>@ApplicationsDir@</TargetDir>
-	<RemoveTargetDir>false</RemoveTargetDir>
-	<InstallerApplicationIcon>adb-wireless-connect</InstallerApplicationIcon>
-	<RunProgram>@TargetDir@/adb-wireless-connect.app</RunProgram>
+	<ProductUrl>https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/main/README.md</ProductUrl>	
+	<StartMenuDir>ADB Wireless Connect</StartMenuDir>
+	<TargetDir>@ApplicationsDir@/ADB Wireless Connect</TargetDir>
+	<RunProgram>@TargetDir@/ADB Wireless Connect</RunProgram>
 	<RunProgramDescription>Launch ADB Wireless Connect</RunProgramDescription>
+	<MaintenanceToolName>ADB Wireless Connect Maintenance Tool</MaintenanceToolName>
+	<MaintenanceToolIniFile>ADB Wireless Connect Maintenance Tool</MaintenanceToolIniFile>
+	<InstallerApplicationIcon>adb-wireless-connect</InstallerApplicationIcon>
 	<WizardDefaultWidth>800</WizardDefaultWidth>
 	<WizardStyle>Modern</WizardStyle>
 	<Logo>logo.png</Logo>

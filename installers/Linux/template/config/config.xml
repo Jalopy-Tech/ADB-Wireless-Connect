@@ -8,6 +8,8 @@
 	<TargetDir>@HomeDir@/adb-wireless-connect</TargetDir>
 	<RunProgram>@TargetDir@/adb-wireless-connect.sh</RunProgram>
 	<RunProgramDescription>Launch ADB Wireless Connect</RunProgramDescription>
+	<MaintenanceToolName>adb-wireless-connect-maintenance-tool</MaintenanceToolName>
+	<MaintenanceToolIniFile>adb-wireless-connect-maintenance-tool</MaintenanceToolIniFile>
 	<WizardDefaultWidth>800</WizardDefaultWidth>
 	<WizardStyle>Modern</WizardStyle>
 	<Logo>logo.png</Logo>

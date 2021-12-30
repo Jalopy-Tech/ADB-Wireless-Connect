@@ -9,4 +9,5 @@
 		<License name="License Agreement" file="license.html" />
 	</Licenses>
 	<ForcedInstallation>true</ForcedInstallation>
+	<Default>true</Default>
 </Package>

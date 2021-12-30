@@ -10,6 +10,8 @@
 	<InstallerApplicationIcon>adb-wireless-connect</InstallerApplicationIcon>
 	<RunProgram>@TargetDir@/adb-wireless-connect/ADBWirelessConnect</RunProgram>
 	<RunProgramDescription>Launch ADB Wireless Connect</RunProgramDescription>
+	<MaintenanceToolName>ADBWirelessConnectMaintenanceTool</MaintenanceToolName>
+	<MaintenanceToolIniFile>ADBWirelessConnectMaintenanceTool</MaintenanceToolIniFile>
 	<WizardDefaultWidth>800</WizardDefaultWidth>
 	<WizardStyle>Modern</WizardStyle>
 	<Logo>logo.png</Logo>
