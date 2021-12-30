@@ -20,9 +20,9 @@ The app relies on ADB Tools being installed with the adb executable file in the 
 
 <img align="center"  src="./images/Screenshot-Pair-result.png" alt="Screenshot-Pair-result"  />
 
-### Installation
+## Installation
 
-#### Linux
+### Linux
 
 <img align="right" src="./images/Linux.png" alt="Linux"  />In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the executable file "ADB-Wireless-Connect-Linux-Installer.run" and run it in Linux. This installer will ask for the destination folder to be created. It defaults to a new folder ("adb-wireless-connect") in the home folder. The app can also be installed to a root folder such as "/opt/adb-wireless-connect" as desired (root password will be needed).. The app files will be installed and a shortcut will be added to the menu under "ADB Wireless Connect". The app can be run directly using the "adb-wireless-connect.sh" file in the installation folder.
 
@@ -44,7 +44,7 @@ ADB Tools needs to be installed and in the search PATH. ADB Tools may be availab
 
 Be aware that this may not be the lasted version of ADB Tools. This is especially relevant if the version does not support the adb pair command. To install the latest version manually, see the following guide: https://www.xda-developers.com/install-adb-windows-macos-linux/ . Make sure the adb is in your PATH. This can be set in your .profile file.
 
-####  Windows
+###  Windows
 
 <img align="right"  src="./images/Windows.png" alt="Windows"  /> In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the executable file "ADB-Wireless-Connect-Windows-Installer.exe" and run it in Windows. This installer will install ADB Wireless Connect. It will add a shortcut to the Windows start menu under "ADB Wireless Connect" and add a shortcut to the desktop.
 
@@ -61,7 +61,7 @@ To install ADB Tools in Windows, do the following:
 7. Select the folder where you put the downloaded ADB Tools folder. e.g. "C:\platform-tools".
 8. Log out or restart Windows to allow the path to be reset.
 
-#### macOS
+### macOS
 
 <img align="right" src="./images/macOS.png" alt="macOS"  />In the latest  <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>., download the ADB-Wireless-Connect-macOS-Image.dmg file and open it in macOS. The image will mount showing the "ADB Wireless Connect.app" application. This can be dragged into the Applications folder using Finder and will be available from the Launcher. Alternatively the app can be opened immediately to run the app.
 
@@ -75,13 +75,13 @@ brew install --cask android-platform-tools
 
 Be aware that this may not be the lasted version of ADB Tools. This is especially relevant if the version does not support the adb pair command. To install the latest version manually, see the following guide: https://www.xda-developers.com/install-adb-windows-macos-linux/ . Make sure the adb is in your PATH. This can be set in your .profile file.
 
-### License
+## License
 
 Copyright &copy; 2022 Robert J. Joynt.
 
 The <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/master/LICENSE.md">ADB Wireless Connect license</a> uses the <a href="https://www.qt.io/">QT</a> GPLv3 <a href="https://doc.qt.io/qt-5/gpl.html">Open Source License</a>
 
-### Contact
+## Contact
 
 For further inquires, please email: robertjjoynt@gmail.com .
 
