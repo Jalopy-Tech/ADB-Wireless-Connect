@@ -75,6 +75,12 @@ brew install --cask android-platform-tools
 
 Be aware that this may not be the lasted version of ADB Tools. This is especially relevant if the version does not support the adb pair command. To install the latest version manually, see the following guide: https://www.xda-developers.com/install-adb-windows-macos-linux/ . Make sure the adb is in your PATH. This can be set in your .profile file.
 
+## Compiling from Source
+
+To compile from source, <a href="https://www.qt.io/">QT</a> Community Edition version 6.22 (or newer) needs to be installed on the relevant platform. All source code is stored in the "source" folder including the abd-wireless-connect.pro file which can be opened by the QT Creator app. Building in QT Creator or using qmake will create a executable file without dependencies added. It is recommended to set the build folder to "../builds" in order to build the executable in a folder expected by the packagers mentioned below.
+
+An installer package including dependencies can be created using the set up files in the folder "installers". There is a folder with a packager script for each platform. Run the relevant packager script which will be named "ADB-Wireless-Connect-[platform]-Packager.[ext]". The packager will create an installer in the same folder. This installer is a single executable file which will install the application on the target platform with all dependencies included. The packager script may need the paths adjusting if the QT utilities are not in the expected paths.
+
 ## License
 
 Copyright &copy; 2022 Robert J. Joynt.
