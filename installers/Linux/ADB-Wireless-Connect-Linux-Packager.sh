@@ -2,17 +2,20 @@
 echo "ADB Wireless Connect Linux Packager"
 
 echo "Deleting old installer..."
-rm -r DistributionKit
 rm ADB-Wireless-Connect-Linux-Installer*
+
+echo Creating Linux deployable folder... 
+rm -R "adb-wireless-connect"
+mkdir "adb-wireless-connect"
 
 echo "Creating new installer..."
 cqtdeployer -confFile "./configFile.json"
 
 echo "Moving new installer..."
-mv DistributionKit/ADB-Wireless-Connect-Linux-Installer* .
+mv adb-wireless-connect/ADB-Wireless-Connect-Linux-Installer* .
 
 echo "Deleting temporary files..."
-rm -r DistributionKit
+rm -R "adb-wireless-connect"
 
 echo "Packaging finished."
 echo "The installer is ADB-Wireless-Connect-Linux-Installer.run"
