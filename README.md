@@ -24,7 +24,7 @@ The app relies on ADB Tools being installed with the adb executable file in the 
 
 ### Linux
 
-<img align="right" src="./images/Linux.png" alt="Linux"  />In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>, download the executable file "ADB-Wireless-Connect-Linux-Installer.run" and run it in Linux. This installer will ask for the destination folder to be created. It defaults to a new folder ("adb-wireless-connect") in the home folder. The app can also be installed to a root folder such as "/opt/adb-wireless-connect" as desired (root password will be needed).. The app files will be installed and a shortcut will be added to the menu under "ADB Wireless Connect". The app can be run directly using the "adb-wireless-connect.sh" file in the installation folder.
+<img align="right" src="./images/Linux.png" alt="Linux"  />In the latest <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/releases">release</a>, download the executable file "ADB-Wireless-Connect-Linux-Installer.run" and run it in Linux. This installer will ask for the destination folder to be created. It defaults to a new folder ("adb-wireless-connect") in the home folder. The app can also be installed to a root folder such as "/opt/adb-wireless-connect" as desired (root password will be needed).. The app files will be installed and a shortcut will be added to the menu under "Other". The app can be run directly using the "adb-wireless-connect.sh" file in the installation folder.
 
 To uninstall, go to the installation folder and run the executable file "adb-wireless-connect-maintenance-tool".
 

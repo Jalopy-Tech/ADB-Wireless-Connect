@@ -30,7 +30,7 @@ adb pair
 
  If abd reports "Unknown command", it needs updating to the latest version (see the Installation section).
 
-## Paring
+## Pairing
 
 An Android device first needs to be be paired before it can be connected. In the app, when the pair action is selected, the "Pair Instructions" button will be available to display a quick set of instructions.
 
@@ -46,23 +46,22 @@ If the Android device is going to be regularly connected, the app can remember t
 
 ## Command line options
 
-The app can pass in options when it is called.
+The app can pass in options when it is called. Usage:
 
-Usage: ./adb-wireless-connect [options]
+  ```
+./adb-wireless-connect [options]
+  ```
 
-Options:
+The options are:
 
-  -h, --help                        Displays help on commandline options.
-
-  --help-all                        Displays help including Qt specific options.
-
-  -v, --version                     Displays version information.
-
-  -i, --ip-address <ipAddress>      Specify the IP address.
-
-  -c, --connect-port <connectPort>  Specify the connect port.
-
-  -p, --pair-port <pairPort>        Specify the pair port.
+| Option                          | Description                                  |
+| ------------------------------- | -------------------------------------------- |
+| -h, --help                      | Displays help on commandline options.        |
+| --help-all                      | Displays help including Qt specific options. |
+| -v, --version                   | Displays version information.                |
+| -i, --ip-address IP_ADDRESS     | Specify the IP address.                      |
+| -c, --connect-port CONNECT_PORT | Specify the connect port.                    |
+| -p, --pair-port PAIR_PORT       | Specify the pair port.                       |
 
 ## License
 
