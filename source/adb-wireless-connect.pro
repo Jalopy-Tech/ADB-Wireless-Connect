@@ -2,6 +2,9 @@
 
 QT       += core gui widgets
 
+win32:QMAKE_LFLAGS += -static-libgcc
+win32:QMAKE_LFLAGS += -static-libstdc++
+
 # Turn off console
 
 CONFIG -= console
@@ -61,20 +64,33 @@ RESOURCES += $$SOURCEDIR/resources/adb-wireless-connect.qrc
 SOURCES     +=  $$SOURCEDIR/main/main.cpp \
 
 
+# Constants
+
+HEADERS     +=  \
+                $$SOURCEDIR/constants/constants.h \
+
+SOURCES     +=  \
+                $$SOURCEDIR/constants/constants.cpp \
+
+INCLUDEPATH +=  $$SOURCEDIR/constants \
+
 
 # View
 
-HEADERS     +=  $$SOURCEDIR/views/view.h \
-                $$SOURCEDIR/views/gui_view.h \
-                $$SOURCEDIR/views/windows_console_fix.h \
+HEADERS     +=  \
+                $$SOURCEDIR/views/view.h \
+                $$SOURCEDIR/views/guiview.h \
+                $$SOURCEDIR/views/windowsconsolefix.h \
 
-SOURCES     +=  $$SOURCEDIR/views/view.cpp \
-                $$SOURCEDIR/views/gui_view.cpp \
-                $$SOURCEDIR/views/windows_console_fix.cpp \
+SOURCES     +=  \
+                $$SOURCEDIR/views/view.cpp \
+                $$SOURCEDIR/views/guiview.cpp \
+                $$SOURCEDIR/views/windowsconsolefix.cpp \
 
-FORMS       +=  $$SOURCEDIR/views/ui/main_dialog.ui \
-                $$SOURCEDIR/views/ui/action_dialog.ui \
-
+FORMS       +=  \
+                $$SOURCEDIR/views/ui/mainwindow.ui \
+                $$SOURCEDIR/views/ui/connectdialog.ui \
+                $$SOURCEDIR/views/ui/pairdialog.ui \
 
 INCLUDEPATH +=  $$SOURCEDIR/views \
 
@@ -100,3 +116,23 @@ SOURCES     +=  $$SOURCEDIR/controllers/controller.cpp \
 
 INCLUDEPATH +=  $$SOURCEDIR/controllers \
 
+
+# Models
+
+HEADERS     +=  \
+                $$SOURCEDIR/models/interpreter.h \
+                $$SOURCEDIR/models/listinterpreter.h \
+                $$SOURCEDIR/models/connectinterpreter.h \
+                $$SOURCEDIR/models/pairinterpreter.h \
+                $$SOURCEDIR/models/disconnectinterpreter.h \
+                $$SOURCEDIR/models/disconnectallinterpreter.h \
+
+SOURCES     +=  \
+                $$SOURCEDIR/models/interpreter.cpp \
+                $$SOURCEDIR/models/listinterpreter.cpp \
+                $$SOURCEDIR/models/connectinterpreter.cpp \
+                $$SOURCEDIR/models/pairinterpreter.cpp \
+                $$SOURCEDIR/models/disconnectinterpreter.cpp \
+                $$SOURCEDIR/models/disconnectallinterpreter.cpp \
+
+INCLUDEPATH +=  $$SOURCEDIR/models \

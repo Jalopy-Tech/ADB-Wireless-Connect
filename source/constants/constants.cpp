@@ -19,48 +19,31 @@
 
    ------------------------------------------------------------------------------------
 
+
+    This program uses a MVP (Model-View-Presenter) architecture using a supervising presenter.
+
+    There are two views: Gui and Console. Each View instantiates a Presenter to carry
+    out the view logic. The Presenter uses view independent logic: both Views use the
+    same Presenter. The View signals to the Presenter when a task is needed
+    and the Presenter calls View methods to provide the results.
+
     The controller reads in the command arguments and then parses the command line. It
     instatiates the appropiate view acting as a view factory. It also finds the
     external command needed by the presenter.
+
+    The Model provides application logic for the Presenter.
 */
 
-#ifndef CONTROLLER_H
-#define CONTROLLER_H
 
-#include "view.h"
-#include "guiview.h"
+//#include "constants.h"
 
-#include <QObject>
-#include <QStandardPaths>
-#include <QSettings>
-#include <QCommandLineParser>
-
-class Controller : public QObject
+namespace appConstants
 {
-    Q_OBJECT
+    const char * APPLICATION_NAME = "ADB Wireless Connect";
+    const char * APPLICATION_VERSION = "2.0";
+    const char * APPLICATION_WEBSITE = "https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/main/ADB-Wireless-Connect.md";
+    const char * ORGANIZATION_NAME = "Jalopy Software";
+    const char * COPYRIGHT_NAME = "Robert J. Joynt";
+    const char * COPYRIGHT_YEAR = "2022";
+}
 
-public:
-    explicit        Controller(QObject *parent = nullptr);
-    ~Controller();
-
-    View*           view();
-
-private:
-    void            setAdbFilePath();
-    View            *_view = NULL;
-    bool            _isValid = true;
-
-    QString         _adbFilePath;
-    QString         _ipAddress;
-    QString         _connectPort;
-    QString         _pairPort;
-    QString         _parsedIpAddress;
-    QString         _parsedConnectPort;
-    QString         _parsedPairPort;
-    QString         _settingsIpAddress;
-    QString         _settingsConnectPort;
-    bool            _fRememberIpAddress;
-    bool            _fRememberConnectPort;
-};
-
-#endif

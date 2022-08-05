@@ -16,37 +16,41 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
     (https://www.gnu.org/licenses/).
+
+   ------------------------------------------------------------------------------------
+
+    The Interpreter is an abstract class. Any concrete subclass interprets the output
+    of comamnds.
 */
 
-#include "view.h"
 
+#ifndef INTERPRETER_H
+#define INTERPRETER_H
 
-View::View(QObject *parent)
-    : QObject(parent)
+#include <QObject>
+#include <QDebug>
+
+class Interpreter : public QObject
 {
+    Q_OBJECT
 
-}
+public:
+    enum CommandType {NO_COMMAND, LIST_COMMAND, CONNECT_COMMAND,
+                      PAIR_COMMAND, DISCONNECT_COMMAND, DISCONNECT_ALL_COMMAND
+                     };
 
-View::~View()
-{
+    explicit        Interpreter(QObject *parent = nullptr);
 
-}
 
-int View::exec()
-{
 
-    if(!executable())
-        return 1;
+    virtual void    interpret(const QString& line) = 0;
 
-    return 0;
-}
+    virtual CommandType
+    commandType() const = 0;
+    virtual QString commandTitle() const = 0;
 
-void View::setExecutable(bool isExecutable)
-{
-    _isExecutable = isExecutable;
-}
+};
 
-bool View::executable()
-{
-    return _isExecutable;
-}
+
+#endif
+

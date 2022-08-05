@@ -2,7 +2,7 @@
     Copyright (C) 2022 Robert J. Joynt.
 
     This software uses the QT (https://www.qt.io/) GPLv3 Open Source License
-    (https://doc.qt.io/qt-5/gpl.html).
+    (https://doc.qt.io/qt-6/gpl.html).
 
     This software is distributed under the GNU General Public License Version 3.
 
@@ -39,7 +39,6 @@
     interface.
 */
 
-
 #ifdef _WIN32
     #include <iostream>
     #include <Windows.h>
@@ -49,10 +48,10 @@
 #define WINDOWSCONSOLEFIX_H
 
 
-namespace WindowsConsoleFix {
-
-    void initialize();
-    void finalize();
+namespace WindowsConsoleFix
+{
+    void            initialize();
+    void            finalize();
 };
 
 #endif

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
 	<DisplayName>ADB Wireless Connect</DisplayName>
-	<Description>GUI front-end to connect and pair to Android devices using adb.</Description>
-	<Version>1.0</Version>
-	<ReleaseDate>2022-01-01</ReleaseDate>
+	<Description>GUI front-end to list, pair, connect and disconnect Android devices using adb.</Description>
+	<Version>2.0</Version>
+	<ReleaseDate>2022-08-08</ReleaseDate>
 	<Name>com.adbwirelessconnect</Name>
 	<Licenses>
 		<License name="License Agreement" file="license.html" />

@@ -2,6 +2,7 @@
 <qresource>
     <file>text/connect-information.txt</file>
     <file>text/pair-information.txt</file>
+    <file>text/about.txt</file>
     <file>images/adb-wireless-connect.png</file>
     <file>images/adb-wireless-connect.ico</file>
     <file>images/adb-wireless-connect.icns</file>

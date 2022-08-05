@@ -3,9 +3,9 @@ echo ADB Wireless Connect Windows Packager
 
 echo Setting paths...
 setlocal
-SET PATH=%PATH%;C:\Qt\6.2.2\mingw_64\bin
-SET PATH=%PATH%;C:\Qt\Tools\QtInstallerFramework\4.2\bin
-SET PATH=%PATH%;C:\Qt\Tools\mingw900_64\bin
+SET PATH=%PATH%;C:\Qt\6.3.1\mingw_64\bin
+SET PATH=%PATH%;C:\Qt\Tools\QtInstallerFramework\4.4\bin
+SET PATH=%PATH%;C:\Qt\Tools\mingw1120_64\bin
 
 echo Deleting old installer...
 del ADB-Wireless-Connect-Windows-Installer.exe

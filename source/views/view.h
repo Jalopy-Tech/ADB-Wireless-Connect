@@ -2,7 +2,7 @@
     Copyright (C) 2022 Robert J. Joynt.
 
     This software uses the QT (https://www.qt.io/) GPLv3 Open Source License
-    (https://doc.qt.io/qt-5/gpl.html).
+    (https://doc.qt.io/qt-6/gpl.html).
 
     This software is distributed under the GNU General Public License Version 3.
 
@@ -27,9 +27,8 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-
+//#include "presenter.h"
 #include <QObject>
-
 
 class Presenter;
 
@@ -39,73 +38,101 @@ class View : public QObject
 
 
 public:
-    explicit View(QObject *parent = nullptr);
+    explicit        View(QObject *parent = nullptr);
     ~View();
 
-    virtual int exec() = 0;
+    virtual int     exec() = 0;
 
-    virtual void init(const QString& ipAddress,
-                      const QString& connectPort, const QString& pairPort) = 0;
+    virtual void    init(const QString& ipAddress,
+                         const QString& connectPort,
+                         const QString& pairPort,
+                         const QString& adbCommand) = 0;
 
-    void setExecutable(bool isExecutable);
-    bool executable();
+    void            setExecutable(bool isExecutable);
+    bool            executable();
 
-    virtual void showError(const QString& msg) = 0;
-    virtual void showInformation(const QString& msg) = 0;
+    virtual void    showError(const QString& msg) = 0;
+    virtual void    showInformation(const QString& msg) = 0;
 
 
-    virtual void setIpAddress(const QString& ipAddress) = 0;
-    virtual QString ipAddress() = 0;
+    virtual void    setIpAddress(const QString& ipAddress) = 0;
+    virtual QString ipAddress() const = 0;
 
-    virtual void setConnectPort(const QString& connectPort) = 0;
-    virtual QString connectPort() = 0;
+    virtual void    setConnectPort(const QString& connectPort) = 0;
+    virtual QString connectPort() const = 0;
 
-    virtual void setPairPort(const QString& pairPort) = 0;
-    virtual QString pairPort() = 0;
+    virtual void    setPairPort(const QString& pairPort) = 0;
+    virtual QString pairPort() const = 0;
 
-    virtual void setPairCode(const QString& pairCode) = 0;
-    virtual QString pairCode() = 0;
+    virtual void    setPairCode(const QString& pairCode) = 0;
+    virtual QString pairCode() const = 0;
 
-    virtual void setParsedIpAddress(const QString& parsedIpAddress) = 0;
-    virtual QString parsedIpAddress() = 0;
 
-    virtual void setParsedConnectPort(const QString& parsedConnectPort) = 0;
-    virtual QString parsedConnectPort() = 0;
+    virtual void    setfRememberIpAddress(bool fRememberIpAddress) = 0;
+    virtual bool    fRememberIpAddress() const = 0;
 
-    virtual void setParsedPairPort(const QString& parsedPairPort) = 0;
-    virtual QString parsedPairPort() = 0;
+    virtual void    setfRememberConnectPort(bool fRememberConnectPort) = 0;
+    virtual bool    fRememberConnectPort() const = 0;
 
-    virtual void setfRememberIpAddress(bool fRememberIpAddress) = 0;
-    virtual bool fRememberIpAddress() = 0;
+    virtual QString connectedDevice() const = 0;
 
-    virtual void setfRememberConnectPort(bool fRememberConnectPort) = 0;
-    virtual bool fRememberConnectPort() = 0;
+    virtual void    setAdbCommand(const QString& adbComamnd) = 0;
+    virtual QString adbCommand() const = 0;
 
-    virtual void setAdbCommand(const QString& adbComamnd) = 0;
-    virtual QString  adbCommand() = 0;
-
-    virtual void setConnectInstructionText(const QString& instructionText) = 0;
-    virtual void setPairInstructionText(const QString& instructionText) = 0;
+    virtual void    setConnectInstructions(const QString& text) = 0;
+    virtual void    setPairInstructions(const QString& text) = 0;
+    virtual void    setAbout(const QString& text) = 0;
 
     virtual void    appendLog(const QString& logText) = 0;
-
+    virtual void    clearLog() = 0;
     virtual QString getAdbProcessCommand(const QString& applicationFilePath) = 0;
-    virtual void    startAction() = 0;
-    virtual void    finishAction() = 0;
+    virtual void    enableActions() = 0;
+    virtual void    disableActions() = 0;
     virtual void    setProgress(int progress) = 0;
 
+    virtual void    clearConnectedDevices() = 0;
 
 signals:
-    void            adbConnectRequested();
-    void            adbPairRequested();
+    void            adbListRequested();
+
+    void            adbConnectRequested(QString ipAddress,
+                                        bool fRememberIpAddress,
+                                        QString connectPort,
+                                        bool fRememberConnectPort);
+
+    void            adbPairRequested(QString ipAddress,
+                                     bool fRememberIpAddress,
+                                     QString pairPort,
+                                     QString pairCode);
+
+    void            adbDisconnectRequested(QString device);
+
+    void            adbDisconnectAllRequested();
+
     void            adbStopRequested();
 
+public slots:
+
+    virtual void    addConnectedDevice(const QString& device, const QString& qualifiers) = 0;
+    virtual void    informListingDevicesReported(const QString& message) = 0;
+    virtual void    informDeviceConnected(const QString& message) = 0;
+    virtual void    informDeviceAlreadyConnected(const QString& message) = 0;
+    virtual void    informConnectingDeviceFailed(const QString& message) = 0;
+    virtual void    informConnectingDeviceReported(const QString& message) = 0;
+    virtual void    informDevicePaired(const QString& message) = 0;
+    virtual void    informPairingDeviceFailed(const QString& message) = 0;
+    virtual void    informPairingDeviceReported(const QString& message) = 0;
+    virtual void    informDeviceDisconnected(const QString& message) = 0;
+    virtual void    informDisconnectingDeviceFailed(const QString& message) = 0;
+    virtual void    informDisconnectingDeviceReported(const QString& message) = 0;
+    virtual void    informAllDevicesDisconnected(const QString& message) = 0;
+    virtual void    informDisconnectingAllDevicesReported(const QString& message) = 0;
 
 protected:
-    Presenter *presenter = NULL;
+    Presenter       *presenter = NULL;
 
 private:
-    bool _isExecutable = true;
+    bool            _isExecutable = true;
 };
 
 

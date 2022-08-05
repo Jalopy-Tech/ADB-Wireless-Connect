@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConnectDialog</class>
+ <widget class="QDialog" name="ConnectDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>214</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Connect</string>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>561</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="portLabel">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>10</y>
+     <width>121</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Port:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="connectPortLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>40</y>
+     <width>171</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The port that adb uses to connect to the Android device</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="ipAddressLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>221</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The IP address of the Android device</string>
+   </property>
+   <property name="toolTipDuration">
+    <number>-1</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="colonLabel">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>40</y>
+     <width>21</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="instructionPushButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>120</y>
+     <width>181</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Instructions on how to connect to an Android device</string>
+   </property>
+   <property name="text">
+    <string>&amp;Instructions</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="rememberIpAddressCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Remember the IP address for next time (stored upon connect or pair)</string>
+   </property>
+   <property name="text">
+    <string>Remember IP address</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ipAddressLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>121</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>IP address:</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="rememberConnectPortCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>70</y>
+     <width>201</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Remember the port to connect to for next time (stored upon connect or pair)</string>
+   </property>
+   <property name="text">
+    <string>Remember Port</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>ipAddressLineEdit</tabstop>
+  <tabstop>connectPortLineEdit</tabstop>
+  <tabstop>rememberIpAddressCheckBox</tabstop>
+  <tabstop>rememberConnectPortCheckBox</tabstop>
+  <tabstop>instructionPushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ConnectDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ConnectDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

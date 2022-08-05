@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Installer>
 	<Name>ADB Wireless Connect</Name>
-	<Version>1.0</Version>
+	<Version>2.0</Version>
 	<Title>ADB Wireless Connect Installer</Title>
 	<Publisher>Jalopy Software</Publisher>
 	<ProductUrl>https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/main/README.md</ProductUrl>

@@ -11,14 +11,14 @@ rm -R "./packages/com.adbwirelessconnect/data/*"
 cp -R "../../builds/macOS/release/adb-wireless-connect/ADB Wireless Connect.app" "./packages/com.adbwirelessconnect/data"
 
 echo Creating macOS deployable app using macdeployqt...
-~/qt/6.2.2/macos/bin/macdeployqt "./packages/com.adbwirelessconnect/data/ADB Wireless Connect.app"
+~/Qt/6.3.1/macos/bin/macdeployqt "./packages/com.adbwirelessconnect/data/ADB Wireless Connect.app"
 
 
 echo "Creating installer..."
-~/Qt/Tools/QtInstallerFramework/4.2/bin/binarycreator --offline-only  -c config/config.xml -p packages ADB-Wireless-Connect-macOS-Installer
+~/Qt/Tools/QtInstallerFramework/4.4/bin/binarycreator --offline-only  -c config/config.xml -p packages ADB-Wireless-Connect-macOS-Installer
 
 echo "Creating disk image of installer using macdeployqt..."
-~/qt/6.2.2/macos/bin/macdeployqt "ADB-Wireless-Connect-macOS-Installer.app" -dmg
+~/Qt/6.3.1/macos/bin/macdeployqt "ADB-Wireless-Connect-macOS-Installer.app" -dmg
 rm -R "ADB-Wireless-Connect-macOS-Installer.app" 
 
 echo Deleting temporary packages...

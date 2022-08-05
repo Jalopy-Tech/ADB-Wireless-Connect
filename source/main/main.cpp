@@ -2,7 +2,7 @@
     Copyright (C) 2022 Robert J. Joynt.
 
     This software uses the QT (https://www.qt.io/) GPLv3 Open Source License
-    (https://doc.qt.io/qt-5/gpl.html).
+    (https://doc.qt.io/qt-6/gpl.html).
 
     This software is distributed under the GNU General Public License Version 3.
 
@@ -34,22 +34,22 @@
     The Model provides application logic for the Presenter.
 */
 
+#include <QApplication>
+#include <QDebug>
+
+#include "constants.h"
 #include "controller.h"
 #include "view.h"
 
-
-#include <QApplication>
-
-#include <QDebug>
 
 int main(int argc, char *argv[])
 {
 
     QApplication app(argc, argv);
 
-    QCoreApplication::setOrganizationName("Jalopy Software");
-    QCoreApplication::setApplicationName("ADB Wireless Connect");
-    QCoreApplication::setApplicationVersion("1.0");
+    QCoreApplication::setApplicationName(appConstants::APPLICATION_NAME);
+    QCoreApplication::setApplicationVersion(appConstants::APPLICATION_VERSION);
+    QCoreApplication::setOrganizationName(appConstants::ORGANIZATION_NAME);
 
     Controller controller;
 
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 
     int returnCode = 0;
 
-    if (view != NULL)
+    if(view != NULL)
         returnCode = view->exec();
     else
         returnCode = 1;

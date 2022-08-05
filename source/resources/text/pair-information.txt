@@ -7,4 +7,3 @@ To pair with an Android device, do the following on the device:
 <li>Use the <i>IP address</i> and <i>Port</i> displayed. These values might be separated by a colon (':').<br/><li/>
 <li>Use the <i>W-Fi pairing code</i> displayed.<br/><li/>
 </ol>
-

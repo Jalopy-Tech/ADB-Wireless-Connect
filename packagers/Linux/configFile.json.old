@@ -4,11 +4,5 @@
     "bin": "../../builds/Linux/release/adb-wireless-connect/adb-wireless-connect",
     "targetDir": "./adb-wireless-connect",
     "icon": "./icons/adb-wireless-connect.png",
-    "qif": "template",
-    "extraData": [
-            "/opt/Qt/6.3.1/gcc_64/lib/libicudata.so.56",
-            "/opt/Qt/6.3.1/gcc_64/lib/libicui18n.so.56",
-            "/opt/Qt/6.3.1/gcc_64/lib/libicuuc.so.56"
-        ]
-
+    "qif": "template"
 }

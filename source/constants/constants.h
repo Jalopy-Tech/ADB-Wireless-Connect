@@ -16,37 +16,23 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
     (https://www.gnu.org/licenses/).
+
+   ------------------------------------------------------------------------------------
+
+    This header is used to define global constants (in namespaces)
 */
 
-#include "view.h"
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
 
-
-View::View(QObject *parent)
-    : QObject(parent)
+namespace appConstants
 {
-
+    extern const char * APPLICATION_NAME;
+    extern const char * APPLICATION_VERSION;
+    extern const char * APPLICATION_WEBSITE;
+    extern const char * ORGANIZATION_NAME;
+    extern const char * COPYRIGHT_NAME;
+    extern const char * COPYRIGHT_YEAR;
 }
 
-View::~View()
-{
-
-}
-
-int View::exec()
-{
-
-    if(!executable())
-        return 1;
-
-    return 0;
-}
-
-void View::setExecutable(bool isExecutable)
-{
-    _isExecutable = isExecutable;
-}
-
-bool View::executable()
-{
-    return _isExecutable;
-}
+#endif

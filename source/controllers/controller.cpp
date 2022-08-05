@@ -2,7 +2,7 @@
     Copyright (C) 2022 Robert J. Joynt.
 
     This software uses the QT (https://www.qt.io/) GPLv3 Open Source License
-    (https://doc.qt.io/qt-5/gpl.html).
+    (https://doc.qt.io/qt-6/gpl.html).
 
     This software is distributed under the GNU General Public License Version 3.
 
@@ -25,25 +25,25 @@ Controller::Controller(QObject *parent)
 {
     QCommandLineParser parser;
 
-  // Set up the parser.
+    // Set up the parser.
 
     parser.setApplicationDescription(tr("A GUI front end to connect and pair using adb."));
 
-     // Set up the various command options allowed in the parser.
+    // Set up the various command options allowed in the parser.
 
     const QCommandLineOption helpOption = parser.addHelpOption();
     const QCommandLineOption versionOption = parser.addVersionOption();
 
     const QCommandLineOption ipAddressOption(QStringList() << "i" << "ip-address",
-           tr("Specify the IP address."), "ipAddress");
+            tr("Specify the IP address."), "ipAddress");
     parser.addOption(ipAddressOption);
 
     const QCommandLineOption connectPortOption(QStringList() << "c" << "connect-port",
-          tr("Specify the connect port."), "connectPort");
+            tr("Specify the connect port."), "connectPort");
     parser.addOption(connectPortOption);
 
     const QCommandLineOption pairPortOption(QStringList() << "p" << "pair-port",
-          tr("Specify the pair port."), "pairPort");
+                                            tr("Specify the pair port."), "pairPort");
     parser.addOption(pairPortOption);
 
 
@@ -63,40 +63,33 @@ Controller::Controller(QObject *parent)
 
     // construct the view
 
-
     _view = new GuiView();
 
     // Check if the parser had errors or requested help or verion
 
-    if (fParseError) {
+    if(fParseError) {
         _view->showError(parser.errorText());
         _view->setExecutable(false);
-    } else if (hasHelpOption) {
-         _view->showInformation(parser.helpText());
-         _view->setExecutable(false);
-    } else if (hasVersionOption) {
-            QString versionText = QString("") + \
-           QCoreApplication::applicationName() + " " + \
-           QCoreApplication::applicationVersion();
+    } else if(hasHelpOption) {
+        _view->showInformation(parser.helpText());
+        _view->setExecutable(false);
+    } else if(hasVersionOption) {
+        QString versionText = QString("") + \
+                              QCoreApplication::applicationName() + " " + \
+                              QCoreApplication::applicationVersion();
 
-       _view->showInformation(versionText);
-       _view->setExecutable(false);
+        _view->showInformation(versionText);
+        _view->setExecutable(false);
     } else {
-
-        _view->init(_parsedIpAddress, _parsedConnectPort, _parsedPairPort);
-
         setAdbFilePath();
-        _view->setAdbCommand(_adbFilePath);
-
-
-
+        _view->init(_parsedIpAddress, _parsedConnectPort, _parsedPairPort, _adbFilePath);
     }
 }
 
 
 Controller::~Controller()
 {
-    delete (_view);
+    delete(_view);
 }
 
 View* Controller::view()
@@ -104,19 +97,19 @@ View* Controller::view()
     return _view;
 }
 
-void Controller::setAdbFilePath() {
+void Controller::setAdbFilePath()
+{
 
     bool fFound = false;
     QStringList filters;
     filters << "adb";
 
 
-
     // Check if the adb command is in the application directory or one of its
     // children
 
-    if (!fFound) {
-         QStringList paths;
+    if(!fFound) {
+        QStringList paths;
 
         // Add all the application directory itself to the seach path
 
@@ -131,17 +124,17 @@ void Controller::setAdbFilePath() {
 
         QFileInfoList dirList;
         dirList = dir.entryInfoList(filters, QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
-        if (!dirList.isEmpty())
-           for( int i = 0 ; i < dirList.count(); ++i )
+        if(!dirList.isEmpty())
+            for(int i = 0 ; i < dirList.count(); ++i)
                 paths << dirList[i].absoluteFilePath();
 
 
-       // Search the paths that were set to find the command
+        // Search the paths that were set to find the command
 
         QString filePath = QStandardPaths::findExecutable("adb", paths);
 
 
-        if (filePath != "") {
+        if(filePath != "") {
             _adbFilePath = filePath;
             fFound = true;
         }
@@ -149,58 +142,57 @@ void Controller::setAdbFilePath() {
 
     // Search for the adb command in the standard paths set by the operating system
 
-    if (!fFound) {
-      QString filePath = QStandardPaths::findExecutable("adb");
+    if(!fFound) {
+        QString filePath = QStandardPaths::findExecutable("adb");
 
-      if (filePath != "") {
-          _adbFilePath = filePath;
-          fFound = true;
-      }
+        if(filePath != "") {
+            _adbFilePath = filePath;
+            fFound = true;
+        }
     }
 
     // The findExecutable function doesn't search in /usr/local/bin, etc on macOS, so do a manual search
 
-     #ifdef Q_OS_MACX
-     if (!fFound) {
+    #ifdef Q_OS_MACX
+    if(!fFound) {
         QStringList dirList;
         dirList.append("/usr/local/bin");
         dirList.append("/usr/local/sbin");
         dirList.append("/usr/bin");
         dirList.append("/usr/sbin");
 
-        QString filePath = QStandardPaths::findExecutable("adb",dirList);
+        QString filePath = QStandardPaths::findExecutable("adb", dirList);
 
-      if (filePath != "") {
-          _adbFilePath = filePath;
-          fFound = true;
-      }
+        if(filePath != "") {
+            _adbFilePath = filePath;
+            fFound = true;
+        }
     }
     #endif
 
 
     // adb command not found, so show error
 
-    if (!fFound)
-       {
+    if(!fFound) {
         QString appPath = QDir::toNativeSeparators(QCoreApplication::applicationDirPath());
         QString msg = QString("") + tr("The executable command \"adb\" cannot be found.") + \
-                tr(" It needs to be in:\n\n") + \
-                tr("  This application's folder,\n") + \
-                tr("\n    OR \n\n") + \
-                tr("  A subfolder of this application's folder,\n") + \
-                tr("\n    OR \n\n") + \
-                tr("  The standard paths of the operating system.") + \
-                tr("\n\n(Note that this application's folder is:\n") + appPath + " )" + \
-                "";
+                      tr(" It needs to be in:\n\n") + \
+                      tr("  This application's folder,\n") + \
+                      tr("\n    OR \n\n") + \
+                      tr("  A subfolder of this application's folder,\n") + \
+                      tr("\n    OR \n\n") + \
+                      tr("  The standard paths of the operating system.") + \
+                      tr("\n\n(Note that this application's folder is:\n") + appPath + " )" + \
+                      "";
 
 
         _view->showError(msg);
         _view->setExecutable(false);
 
 
-        }
+    }
 
-    if (!fFound)
+    if(!fFound)
         _isValid = false;
 }
 

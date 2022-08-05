@@ -18,35 +18,41 @@
     (https://www.gnu.org/licenses/).
 */
 
-#include "view.h"
+#include "disconnectallinterpreter.h"
 
-
-View::View(QObject *parent)
-    : QObject(parent)
+DisconnectAllInterpreter::DisconnectAllInterpreter(QObject *parent)
+    : Interpreter(parent)
 {
 
 }
 
-View::~View()
+Interpreter::CommandType DisconnectAllInterpreter::commandType() const
 {
-
+    return DISCONNECT_ALL_COMMAND;
 }
 
-int View::exec()
+QString DisconnectAllInterpreter::commandTitle() const
 {
-
-    if(!executable())
-        return 1;
-
-    return 0;
+    return "Disconnect All command";
 }
 
-void View::setExecutable(bool isExecutable)
+void DisconnectAllInterpreter::interpret(const QString& line)
 {
-    _isExecutable = isExecutable;
-}
+    QString searchString;
 
-bool View::executable()
-{
-    return _isExecutable;
+    if(line.isEmpty())
+        return;
+
+    searchString = "disconnected everything";
+
+    if(line.toLower().startsWith(searchString.toLower())) {
+        QString message = tr("All devices disconnected: ") + line;
+        emit allDevicesDisconnected(message);
+        return;
+    }
+
+    emit disconnectingAllDevicesReported(line);
+    return;
+
+
 }

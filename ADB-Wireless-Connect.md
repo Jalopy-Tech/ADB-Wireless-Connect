@@ -2,9 +2,9 @@
 
 ## Overview
 
-<img align="right" src="./images/ADB Wireless Connect.png" alt="ADB Wireless Connect" style="zoom:100%;" />ADB Wireless Connect is a GUI front-end to to connect or pair an Android device using adb.
+<img align="right" src="./images/ADB Wireless Connect.png" alt="ADB Wireless Connect" style="zoom:100%;" />ADB Wireless Connect is a GUI front-end to list, pair, connect or disconnect an Android device using adb.
 
- The Android device needs to connected the same network via WiFi. The connecting device needs to be connected using either WiFI or Ethernet.
+ The Android device needs to connected the same network via WiFi.
 
 ## Installation
 
@@ -67,4 +67,4 @@ The options are:
 
 Copyright &copy; 2022 Robert J. Joynt.
 
-The <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect /blob/main/LICENSE.md">ADB Wireless Connect  license</a> uses the <a href="https://www.qt.io/">QT</a> GPLv3 <a href="https://doc.qt.io/qt-5/gpl.html">Open Source License</a>
+The <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect /blob/main/LICENSE.md">ADB Wireless Connect  license</a> uses the <a href="https://www.qt.io/">QT</a> GPLv3 <a href="https://doc.qt.io/qt-6/gpl.html">Open Source License</a>

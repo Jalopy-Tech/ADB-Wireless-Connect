@@ -1,0 +1,8 @@
+<B><APPLICATION_NAME> v<APPLICATION_VERSION></B><BR>
+<BR>
+Copyright © <COPYRIGHT_YEAR> <COPYRIGHT_NAME><BR>
+<BR>
+<APPLICATION_NAME> is a GUI front-end to list, pair, connect and disconnect Android devices using adb. <BR>
+<BR>
+For help, go to:<BR>
+<a href='<APPLICATION_WEBSITE>'><APPLICATION_WEBSITE></a>

@@ -1,10 +1,10 @@
 ### ADB WIRELESS CONNECT LICENSE
 
-1 January,  2022
+August,  2022
 
 Copyright &copy; 2022 Robert J. Joynt.
 
-This software named <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/master/README.md">ADB Wireless Connect</a> uses the <a href="https://www.qt.io/">QT</a> GPLv3 <a href="https://doc.qt.io/qt-5/gpl.html">Open Source License</a>
+This software named <a href="https://github.com/Jalopy-Tech/ADB-Wireless-Connect/blob/master/README.md">ADB Wireless Connect</a> uses the <a href="https://www.qt.io/">QT</a> GPLv3 <a href="https://doc.qt.io/qt-6/gpl.html">Open Source License</a>
 
 This software is distributed under the GNU General Public License Version 3.
 

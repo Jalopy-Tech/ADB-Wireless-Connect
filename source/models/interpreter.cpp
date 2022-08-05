@@ -18,35 +18,10 @@
     (https://www.gnu.org/licenses/).
 */
 
-#include "view.h"
+#include "interpreter.h"
 
-
-View::View(QObject *parent)
+Interpreter::Interpreter(QObject *parent)
     : QObject(parent)
 {
 
-}
-
-View::~View()
-{
-
-}
-
-int View::exec()
-{
-
-    if(!executable())
-        return 1;
-
-    return 0;
-}
-
-void View::setExecutable(bool isExecutable)
-{
-    _isExecutable = isExecutable;
-}
-
-bool View::executable()
-{
-    return _isExecutable;
 }
