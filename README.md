@@ -12,13 +12,13 @@ The app relies on ADB Tools being installed with the adb executable file in the 
 
 ### Main Window
 
-<img align="center"  src="./images/Screenshot-Main-Window.png" alt="Screenshot-Main-Window" width="1000" />
+<img align="center"  src="./images/Screenshot-Main-Window.png" alt="Screenshot-Main-Window"/>
 
 ### Connecting
-<img align="center"  src="./images/Screenshot-Connect.png" alt="Screenshot-Connect" width="500" />
+<img align="center"  src="./images/Screenshot-Connect.png" alt="Screenshot-Connect"/>
 
 ### Pairing
-<img align="center"  src="./images/Screenshot-Pair.png" alt="Screenshot-Pair" width="500" />
+<img align="center"  src="./images/Screenshot-Pair.png" alt="Screenshot-Pair"/>
 
 ## Installation
 
